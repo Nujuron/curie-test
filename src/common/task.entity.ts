@@ -1,5 +1,5 @@
 import { ObjectType, Field, ID } from '@nestjs/graphql';
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, DeleteDateColumn} from 'typeorm';
 import { State, Priority } from './fieldTypes';
 
 @Entity('tasks')
@@ -24,4 +24,8 @@ export class Task {
   @Field()
   @Column()
   endDate: Date;
+
+  @Field()
+  @DeleteDateColumn()
+  deletedAt?: Date;
 }

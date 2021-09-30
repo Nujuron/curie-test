@@ -25,7 +25,11 @@ export class TasksService {
     return getRepository(Task).update(id, updateTaskInput);
   }
 
-  async remove(id: number) {
-    return getRepository(Task).delete(id);
+  async softDelete(id: number) {
+    return getRepository(Task).softDelete(id);
+  }
+
+  async restoreTask(id: number) {
+    return getRepository(Task).restore(id);
   }
 }

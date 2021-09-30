@@ -37,8 +37,13 @@ export class TasksResolver {
   }
 
   @Mutation(() => Task)
-  async removeTask(@Args('id', { type: () => ID }) id: number) {
-    return this.tasksService.remove(id);
+  async deleteTask(@Args('id', { type: () => ID }) id: number) {
+    return this.tasksService.softDelete(id);
+  }
+
+  @Mutation(() => Task)
+  async restoreTask(@Args('id', { type: () => ID }) id: number) {
+    return this.tasksService.restoreTask(id);
   }
 
   @Subscription(returns => Task)

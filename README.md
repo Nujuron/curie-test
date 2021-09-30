@@ -7,7 +7,7 @@ Aplicación para gestionar tareas.
 Uso de la libreria @nest/crud https://github.com/nestjsx/crud para la API REST, en la carpeta tasks-api. Borrar, crear y leer funcionales, para usarlos usar la siguiente ruta: http://localhost:5000/tasks
 
 ## graphQL 
-En la carpeta tasks:
+Create, read, softDelte y restore implementados, update not working
 ```bash
 Create example 
 mutation {
@@ -25,6 +25,26 @@ mutation {
     endDate
   }
 }
+
+read example 
+{
+  tasks
+}
+
+softDelete example 
+mutation {
+  deleteTask( id: 5 ) {
+    id,
+  }
+}
+
+restore example
+mutation {
+  restoreTask( id: 5 ) {
+    id,
+  }
+}
+
 ```
 ## FRONTEND
 El frontend no está terminado, ha falta de hacer las llamadas al backend para recibir data
