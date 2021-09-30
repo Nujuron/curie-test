@@ -21,7 +21,7 @@ export class TasksService {
   }
 
   async update(id: number, updateTaskInput: UpdateTaskInput) {
-    return `This action updates a #${id} task`;
+    return getRepository(Task).update(id, updateTaskInput);
   }
 
   async remove(id: number) {
