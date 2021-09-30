@@ -8,13 +8,8 @@ import { serialize } from './response';
 
 @Crud({
   model: { type: Task },
-  params: {
-    id: {
-      primary: true,
-    },
-  },
+  serialize,
   routes: {
-    only: ["deleteOneBase"],
     deleteOneBase: {
       returnDeleted: true,
     },
