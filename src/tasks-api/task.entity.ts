@@ -15,6 +15,6 @@ export class Task {
     @Column()
     priority: Priority;
 
-    // @Column()
-    // endDate: Date;
+    @Column()
+    endDate: Date;
 }
