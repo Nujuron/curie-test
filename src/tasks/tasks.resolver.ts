@@ -1,7 +1,7 @@
 import { Resolver, Query, Mutation, Args, ID, Subscription } from '@nestjs/graphql';
 import { PubSub } from 'graphql-subscriptions';
 import { TasksService } from './tasks.service';
-import { Task } from './entities/task.entity';
+import { Task } from 'src/common/task.entity';
 import { CreateTaskInput } from './dto/create-task.input';
 import { UpdateTaskInput } from './dto/update-task.input';
 import { TasksArgs } from './dto/tasks.args';

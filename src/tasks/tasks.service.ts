@@ -3,9 +3,10 @@ import { getRepository } from 'typeorm';
 import { CreateTaskInput } from './dto/create-task.input';
 import { TasksArgs } from './dto/tasks.args';
 import { UpdateTaskInput } from './dto/update-task.input';
-import { Task } from './entities/task.entity';
+import { Task } from 'src/common/task.entity';
 
 @Injectable()
+
 export class TasksService {
 
   async create(data: CreateTaskInput): Promise<Task> {

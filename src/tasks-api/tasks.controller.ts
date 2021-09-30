@@ -2,7 +2,7 @@ import { Controller } from '@nestjs/common';
 // import { ApiTags } from '@nestjs/swagger';
 import { Crud } from '@nestjsx/crud';
 
-import { Task } from './task.entity';
+import { Task } from 'src/common/task.entity';
 import { TasksService } from './tasks.service';
 import { serialize } from './response';
 
