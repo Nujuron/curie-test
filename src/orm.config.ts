@@ -8,5 +8,5 @@ export const withCache: TypeOrmModuleOptions = {
     username: 'ujiztigb', // testing only
     password: 'tCyQq9KAySm2e8eiU5YoJvy5Q0T64xtZ', // testing only
     synchronize: true, // automatic migration
-    entities: [join(__dirname, './tasks-api/*.entity{.ts,.js}')],
+    entities: [join(__dirname, './**/*.entity{.ts,.js}')],
 };
