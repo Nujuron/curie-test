@@ -1,5 +1,28 @@
+## API REST
+Uso de la libreria @nest/crud https://github.com/nestjsx/crud para la API REST, en la carpeta tasks-api. Borrar, crear y leer funcionales, para usarlos usar la siguiente ruta: http://localhost:5000/tasks
+
+## graphQL 
+En la carpeta tasks:
+-- Create example 
+mutation {
+  createTask(createTaskInput: {
+    id: 20,
+    title: "work",
+    state: "pending",
+    priority: "low",
+    endDate: "2019-12-03T09:54:33Z"
+  }){
+    id,
+    title,
+    state,
+    priority,
+    endDate
+  }
+}
+
+
 ## Before testing
-Separar el folder client fuera del folder project
+Cortar folder "client" fuera de "project" antes de ejecutar nest
 
 ## Installation
 
