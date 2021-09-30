@@ -8,7 +8,8 @@ Uso de la libreria @nest/crud https://github.com/nestjsx/crud para la API REST, 
 
 ## graphQL 
 En la carpeta tasks:
--- Create example 
+```bash
+Create example 
 mutation {
   createTask(createTaskInput: {
     id: 20,
@@ -24,11 +25,11 @@ mutation {
     endDate
   }
 }
-
+```
 ## FRONTEND
 El frontend no está terminado, ha falta de hacer las llamadas al backend para recibir data
 
-## Before testing
+## Before anything
 Cortar folder "client" fuera de "project" antes de ejecutar nest
 
 ## Installation
