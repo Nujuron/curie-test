@@ -1,0 +1,44 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Task {
+  id: ID!
+  title: String!
+  state: String!
+  priority: String!
+  endDate: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  tasks: [Task!]!
+  task(id: ID!): Task!
+}
+
+type Mutation {
+  createTask(createTaskInput: CreateTaskInput!): Task!
+  updateTask(updateTaskInput: UpdateTaskInput!): Task!
+  removeTask(id: ID!): Task!
+}
+
+input CreateTaskInput {
+  """identifier"""
+  id: ID!
+  title: String!
+  state: String = "pending"
+  priority: String = "low"
+  endDate: DateTime!
+}
+
+input UpdateTaskInput {
+  id: ID!
+  title: String!
+  state: String = "pending"
+  priority: String!
+  endDate: DateTime!
+}
