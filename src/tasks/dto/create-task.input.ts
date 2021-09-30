@@ -3,8 +3,10 @@ import { State, Priority } from '../../common/fieldTypes';
 
 @InputType()
 export class CreateTaskInput {
-  @Field(() => ID, { description: 'identifier' })
+  
+  @Field(() => ID)
   id: number;
+
   @Field()
   title: string;
 

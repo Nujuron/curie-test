@@ -4,8 +4,10 @@ import { State, Priority } from '../../common/fieldTypes';
 
 @InputType()
 export class UpdateTaskInput extends PartialType(CreateTaskInput) {
+
   @Field(() => ID)
   id: number;
+  
   @Field()
   title: string;
 
