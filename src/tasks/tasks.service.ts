@@ -1,32 +1,30 @@
 import { Injectable } from '@nestjs/common';
-import { Repository } from 'typeorm';
+import { getRepository } from 'typeorm';
 import { CreateTaskInput } from './dto/create-task.input';
+import { TasksArgs } from './dto/tasks.args';
 import { UpdateTaskInput } from './dto/update-task.input';
 import { Task } from './entities/task.entity';
 
 @Injectable()
 export class TasksService {
-  private readonly cats: Array<Task & { ownerId?: number }> = [
-    { id: 1, title: 'Cat', state: 'cancelled', priority: "low", endDate: new Date},
-  ];
 
-  create(createTaskInput: CreateTaskInput) {
-    return 'This action adds a new task';
+  async create(data: CreateTaskInput): Promise<Task> {
+    return getRepository(Task).save(data);
   }
 
-  findAll(): Task[] {
-    return this.cats;
+  async findAll(tasksArgs: TasksArgs): Promise<Task[]> {
+    return getRepository(Task).find(tasksArgs)
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} task`;
+  async findOne(id: number) {
+    return getRepository(Task).findOne(id);
   }
 
-  update(id: number, updateTaskInput: UpdateTaskInput) {
+  async update(id: number, updateTaskInput: UpdateTaskInput) {
     return `This action updates a #${id} task`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} task`;
+  async remove(id: number) {
+    return getRepository(Task).delete(id);
   }
 }
