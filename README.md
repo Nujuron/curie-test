@@ -1,6 +1,9 @@
 # ABOUT
 Aplicación para gestionar tareas.
 
+## Importante
+Cortar folder "client" fuera de "project" antes de ejecutar nest
+
 ## API REST
 Uso de la libreria @nest/crud https://github.com/nestjsx/crud para la API REST, en la carpeta tasks-api. Borrar, crear y leer funcionales, para usarlos usar la siguiente ruta: http://localhost:5000/tasks
 
@@ -53,9 +56,6 @@ mutation {
 
 ## FRONTEND
 El frontend no está terminado, ha falta de hacer las llamadas al backend para recibir datos
-
-## Before anything
-Cortar folder "client" fuera de "project" antes de ejecutar nest
 
 ## Installation
 
